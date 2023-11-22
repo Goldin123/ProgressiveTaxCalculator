@@ -1,0 +1,145 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator", "ProgressiveTaxCalculator\ProgressiveTaxCalculator.csproj", "{5D88043E-7519-4100-A74E-FCBC35B1B9AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{7B57574F-6EF3-441D-921F-D98E29691448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{3581901C-185E-4EF5-9816-7A342E6E31A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4192EA87-511E-4232-A007-5A028A9BA0CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CBDC8789-E41E-4280-81D1-9E91511E1AF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthorizationServer", "AuthorizationServer", "{DC1EA2BB-F612-4B50-AF5D-227C9E0BC20D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache", "Cache", "{C8A3B47B-68C9-4C1B-963A-FFB37E16DD88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{632370F7-F1D7-4C97-A845-4029AE9FEB48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{60E103C0-937F-4AFE-98CE-5BA6DEEC9A47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{F65E3B68-EBCF-49B8-86E2-3EBDE0D22BF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{5C3EAA48-492F-48DE-92E7-3D284111C0B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{06BC9559-6E14-49A9-A4C5-E28979568372}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{7028C073-C5FD-4F0B-8057-EB2EC43B7C1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{7F8A1883-0A87-499F-AC6E-60493423DF67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Website.Tests", "ProgressiveTaxCalculator.Website.Tests\ProgressiveTaxCalculator.Website.Tests.csproj", "{2280588C-E02E-4303-8BD5-551B646BE53D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Api", "ProgressiveTaxCalculator.Api\ProgressiveTaxCalculator.Api.csproj", "{99F5BF0F-FB1F-4198-8835-BABFFAB066CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Api.Tests", "ProgressiveTaxCalculator.Api.Tests\ProgressiveTaxCalculator.Api.Tests.csproj", "{0AE470AA-9677-4613-981D-74D7A89E5005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.InMemory.Database", "ProgressiveTaxCalculator.InMemory.Database\ProgressiveTaxCalculator.InMemory.Database.csproj", "{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.InMemory.Database.Tests", "ProgressiveTaxCalculator.InMemory.Database.Tests\ProgressiveTaxCalculator.InMemory.Database.Tests.csproj", "{01FAD1A5-29B0-4136-A799-43AC31DA945A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Model", "ProgressiveTaxCalculator.Model\ProgressiveTaxCalculator.Model.csproj", "{F1A519C9-FA73-4D14-861E-9E7EB155EAA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{F71D1A4F-9BA8-414E-B11F-176672A202B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Sandbox", "ProgressiveTaxCalculator.Sandbox\ProgressiveTaxCalculator.Sandbox.csproj", "{07F6ABED-0CC5-4277-82FF-C300A21E2EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Sandbox.Tests", "ProgressiveTaxCalculator.Sandbox.Tests\ProgressiveTaxCalculator.Sandbox.Tests.csproj", "{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator", "Calculator", "{48E4F9E3-13EB-4E25-B77F-4F39B0203C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Calculator", "ProgressiveTaxCalculator.Calculator\ProgressiveTaxCalculator.Calculator.csproj", "{DFE82E00-E352-4D39-9A97-CC6212BD9D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.Calculator.Tests", "ProgressiveTaxCalculator.Calculator.Tests\ProgressiveTaxCalculator.Calculator.Tests.csproj", "{B93EBF24-72C2-40EF-BD03-425A079D47ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.LocalDB", "ProgressiveTaxCalculator.LocalDB\ProgressiveTaxCalculator.LocalDB.csproj", "{F25274FC-8206-44FC-B8CF-DD08ABA74F1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressiveTaxCalculator.LocalDB.Tests", "ProgressiveTaxCalculator.LocalDB.Tests\ProgressiveTaxCalculator.LocalDB.Tests.csproj", "{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D88043E-7519-4100-A74E-FCBC35B1B9AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D88043E-7519-4100-A74E-FCBC35B1B9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D88043E-7519-4100-A74E-FCBC35B1B9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D88043E-7519-4100-A74E-FCBC35B1B9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2280588C-E02E-4303-8BD5-551B646BE53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2280588C-E02E-4303-8BD5-551B646BE53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2280588C-E02E-4303-8BD5-551B646BE53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2280588C-E02E-4303-8BD5-551B646BE53D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F5BF0F-FB1F-4198-8835-BABFFAB066CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F5BF0F-FB1F-4198-8835-BABFFAB066CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F5BF0F-FB1F-4198-8835-BABFFAB066CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F5BF0F-FB1F-4198-8835-BABFFAB066CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE470AA-9677-4613-981D-74D7A89E5005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE470AA-9677-4613-981D-74D7A89E5005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE470AA-9677-4613-981D-74D7A89E5005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE470AA-9677-4613-981D-74D7A89E5005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01FAD1A5-29B0-4136-A799-43AC31DA945A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01FAD1A5-29B0-4136-A799-43AC31DA945A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01FAD1A5-29B0-4136-A799-43AC31DA945A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01FAD1A5-29B0-4136-A799-43AC31DA945A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A519C9-FA73-4D14-861E-9E7EB155EAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A519C9-FA73-4D14-861E-9E7EB155EAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A519C9-FA73-4D14-861E-9E7EB155EAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A519C9-FA73-4D14-861E-9E7EB155EAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F6ABED-0CC5-4277-82FF-C300A21E2EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F6ABED-0CC5-4277-82FF-C300A21E2EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F6ABED-0CC5-4277-82FF-C300A21E2EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F6ABED-0CC5-4277-82FF-C300A21E2EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE82E00-E352-4D39-9A97-CC6212BD9D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE82E00-E352-4D39-9A97-CC6212BD9D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE82E00-E352-4D39-9A97-CC6212BD9D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE82E00-E352-4D39-9A97-CC6212BD9D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93EBF24-72C2-40EF-BD03-425A079D47ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93EBF24-72C2-40EF-BD03-425A079D47ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93EBF24-72C2-40EF-BD03-425A079D47ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93EBF24-72C2-40EF-BD03-425A079D47ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25274FC-8206-44FC-B8CF-DD08ABA74F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25274FC-8206-44FC-B8CF-DD08ABA74F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25274FC-8206-44FC-B8CF-DD08ABA74F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25274FC-8206-44FC-B8CF-DD08ABA74F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D88043E-7519-4100-A74E-FCBC35B1B9AD} = {7B57574F-6EF3-441D-921F-D98E29691448}
+		{F65E3B68-EBCF-49B8-86E2-3EBDE0D22BF6} = {CBDC8789-E41E-4280-81D1-9E91511E1AF4}
+		{5C3EAA48-492F-48DE-92E7-3D284111C0B8} = {CBDC8789-E41E-4280-81D1-9E91511E1AF4}
+		{2280588C-E02E-4303-8BD5-551B646BE53D} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+		{99F5BF0F-FB1F-4198-8835-BABFFAB066CE} = {3581901C-185E-4EF5-9816-7A342E6E31A0}
+		{0AE470AA-9677-4613-981D-74D7A89E5005} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+		{AF908C50-8A1E-4E16-BA1E-AB0DB3B190C6} = {4192EA87-511E-4232-A007-5A028A9BA0CA}
+		{01FAD1A5-29B0-4136-A799-43AC31DA945A} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+		{F1A519C9-FA73-4D14-861E-9E7EB155EAA1} = {F65E3B68-EBCF-49B8-86E2-3EBDE0D22BF6}
+		{F71D1A4F-9BA8-414E-B11F-176672A202B7} = {CBDC8789-E41E-4280-81D1-9E91511E1AF4}
+		{07F6ABED-0CC5-4277-82FF-C300A21E2EA0} = {F71D1A4F-9BA8-414E-B11F-176672A202B7}
+		{59FAEE09-6F6F-42EA-AAFC-66EA8C61ACBD} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+		{DFE82E00-E352-4D39-9A97-CC6212BD9D22} = {48E4F9E3-13EB-4E25-B77F-4F39B0203C59}
+		{B93EBF24-72C2-40EF-BD03-425A079D47ED} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+		{F25274FC-8206-44FC-B8CF-DD08ABA74F1A} = {4192EA87-511E-4232-A007-5A028A9BA0CA}
+		{36E1A9A9-3DC6-43CF-BC46-DDA14556FB78} = {7F8A1883-0A87-499F-AC6E-60493423DF67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78A9A605-F197-4B40-8A36-2150418E8290}
+	EndGlobalSection
+EndGlobal
