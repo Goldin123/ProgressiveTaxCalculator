@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\FlatRateTax\Implementation\" />
+    <Folder Include="Features\FlatRateTax\Interface\" />
+    <Folder Include="Features\FlatValueTax\Implementation\" />
+    <Folder Include="Features\FlatValueTax\Interface\" />
+    <Folder Include="Features\ProgressiveTax\Implementation\" />
+    <Folder Include="Features\ProgressiveTax\Interface\" />
+  </ItemGroup>
+
 </Project>
