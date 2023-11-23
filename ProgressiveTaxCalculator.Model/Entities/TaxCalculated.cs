@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This holds the history/audit of all calculated values.
+    /// </summary>
     public class TaxCalculated
     {
+        [Key]
         public int? Id { get; set; }
         public int? TaxTableId { get; set; }
         public int? TaxTypeId { get; set; }

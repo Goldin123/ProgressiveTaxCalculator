@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This represents the available postal codes linked the available tax type.
+    /// </summary>
     public class PostalCode
     {
+        [Key]
         public int? Id { get; set; }
         public int? TaxTypeId { get; set; }
         public string? Code { get; set; }

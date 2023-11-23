@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This will represent weather the term is annual, monthly, bi-weekly, etc..
+    /// </summary>
     public class TaxTerm
     {
+        [Key]
         public int? Id { get; set; }
         public string? TaxTermName { get; set; }
         public bool? Active { get; set; }
