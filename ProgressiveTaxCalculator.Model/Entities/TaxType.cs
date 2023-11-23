@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace ProgressiveTaxCalculator.Model.Entities
     /// </summary>
     public class TaxType
     {
+
+        [Key]
         public int? Id { get; set; }
         public string? TaxTypeName { get; set; }
         public bool? Active { get; set; }

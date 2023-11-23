@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxCalculator.Model\ProgressiveTaxCalculator.Model.csproj" />
+    <ProjectReference Include="..\ProgressiveTaxCalculator.Sandbox\ProgressiveTaxCalculator.Sandbox.csproj" />
   </ItemGroup>
 
 </Project>
