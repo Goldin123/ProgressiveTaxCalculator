@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This defines the available tax percentage for each tax type linked to a postal code also the amount bracket levels.
+    /// </summary>
     public class TaxTable
     {
         public int? Id { get; set; }

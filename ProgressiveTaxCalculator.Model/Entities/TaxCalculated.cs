@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This holds the history/audit of all calculated values.
+    /// </summary>
     public class TaxCalculated
     {
         public int? Id { get; set; }

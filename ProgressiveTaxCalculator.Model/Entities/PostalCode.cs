@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgressiveTaxCalculator.Model.Entities
 {
+    /// <summary>
+    /// This represents the available postal codes linked the available tax type.
+    /// </summary>
     public class PostalCode
     {
         public int? Id { get; set; }
