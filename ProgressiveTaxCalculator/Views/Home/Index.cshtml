@@ -1,8 +1,29 @@
-﻿@{
+﻿@using ProgressiveTaxCalculator.Model.Objects;
+@model ProgressiveTaxViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <h1 class="display-4">Welcome </h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        <div class="form-group">
+            <label asp-for="PostalCodeId">Select Postal Code:</label>
+            <select asp-for="PostalCodeId" asp-items="new SelectList(Model.PostalCodes, nameof(PostalCodeResponse.id), nameof(PostalCodeResponse.name))" class="form-control">
+                <option value="">Select a postal code</option>
+            </select>
+            <span asp-validation-for="PostalCodeId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="GrossAmount">Enter Gross Amount:</label>
+            <input asp-for="GrossAmount" class="form-control" />
+            <span asp-validation-for="GrossAmount" class="text-danger"></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>

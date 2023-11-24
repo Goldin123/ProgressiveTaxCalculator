@@ -1,4 +1,5 @@
 ﻿using ProgressiveTaxCalculator.Model.Entities;
+using ProgressiveTaxCalculator.Model.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Interface
         Task<List<TaxTerm>> AddTaxTermsAsync(List<TaxTerm> taxTerms);
         Task<List<PostalCode>> AddPostalCodeAsync(List<PostalCode> postalCodes);
         Task<List<TaxTable>> AddTaxTablesAsync(List<TaxTable> taxTables);
-        Task<List<PostalCode>> GetPostalCodesAsync();
+        Task<List<PostalCodeResponse>> GetPostalCodesAsync();
     }
 }

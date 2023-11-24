@@ -2,6 +2,7 @@
 using ProgressiveTaxCalculator.Api.Features.GetPostalCodes.Interface;
 using ProgressiveTaxCalculator.InMemory.Database.Repository.Interface;
 using ProgressiveTaxCalculator.Model.Entities;
+using ProgressiveTaxCalculator.Model.Objects;
 
 namespace ProgressiveTaxCalculator.Api.Features.GetPostalCodes.Implementation
 {
@@ -16,7 +17,7 @@ namespace ProgressiveTaxCalculator.Api.Features.GetPostalCodes.Implementation
             _inMemoryTaxRepository = inMemoryTaxRepository;
         }
 
-        public async Task<List<PostalCode>> GetPostalCodes() 
+        public async Task<List<PostalCodeResponse>> GetPostalCodes() 
         {
             try 
             { 

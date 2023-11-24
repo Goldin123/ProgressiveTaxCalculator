@@ -1,7 +1,22 @@
+using ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Implementation;
+using ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Interface;
+using ProgressiveTaxCalculator.Sandbox.ApiTools.Client.Implementation;
+using ProgressiveTaxCalculator.Sandbox.ApiTools.Client.Interface;
+using ProgressiveTaxCalculator.Sandbox.Generics.Implementation;
+using ProgressiveTaxCalculator.Sandbox.Generics.Interface;
+using ProgressiveTaxCalculator.Settings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IPostalCodeManager, PostalCodeManager>();
+builder.Services.AddScoped<IClientOrchestratorAgent, ClientOrchestratorAgent>();
+builder.Services.AddScoped<IApplicationGenerics, ApplicationGenerics>();
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 var app = builder.Build();
 

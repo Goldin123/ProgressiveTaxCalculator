@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgressiveTaxCalculator.Model.Objects
+namespace ProgressiveTaxCalculator.Model.Constants
 {
     public class ContentNegotiationTypes
     {
