@@ -1,21 +1,56 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Interface;
 using ProgressiveTaxCalculator.Models;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace ProgressiveTaxCalculator.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IPostalCodeManager _postalCodeManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IPostalCodeManager postalCodeManager)
         {
             _logger = logger;
+            _postalCodeManager = postalCodeManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = new ProgressiveTaxViewModel();
+            try
+            {
+                model.PostalCodes = await _postalCodeManager.GetPostalCodesAsync();
+
+            } catch (Exception ex)
+            {
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(Index)} - {ex.Message}"));
+
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(ProgressiveTaxViewModel progressiveTaxViewModel)
+        {
+            try
+            {
+                if (progressiveTaxViewModel.PostalCodes == null)
+                    progressiveTaxViewModel.PostalCodes = await _postalCodeManager.GetPostalCodesAsync();
+
+                if (ModelState.IsValid)
+                {
+                    return View(progressiveTaxViewModel);
+                }
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(Index)} - {ex.Message}"));
+            }
+            return View(progressiveTaxViewModel);
         }
 
         public IActionResult Privacy()

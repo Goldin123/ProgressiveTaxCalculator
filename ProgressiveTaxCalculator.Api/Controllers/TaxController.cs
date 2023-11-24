@@ -29,7 +29,7 @@ namespace ProgressiveTaxCalculator.Api.Controllers
         {
             try
             {
-                List<PostalCode>? postalCodes;
+                List<PostalCodeResponse>? postalCodes;
                 postalCodes = await _apiGetPostalCodes.GetPostalCodes();
                 if (postalCodes?.Count > 0)
                     return Ok(postalCodes);

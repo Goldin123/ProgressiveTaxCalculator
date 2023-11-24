@@ -63,9 +63,10 @@ namespace ProgressiveTaxCalculator.Sandbox.ApiTools.Client.Implementation
                 }
                 responseData = await _applicationGenerics.ProcessRestCall(apiUrl, restRequest, certificate);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _logger.LogError(e.Message, e);
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(SendRequestAsync)} - {ex.Message}"));
+
                 responseData = new() { ResponsePayload = _applicationGenerics.HandleResponse(Notifications.InternalErrorOccurred), Status = HttpStatusCode.InternalServerError };
             }
             finally

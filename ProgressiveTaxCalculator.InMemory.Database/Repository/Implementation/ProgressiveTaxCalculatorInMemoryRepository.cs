@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using ProgressiveTaxCalculator.InMemory.Database.Persistence;
 using ProgressiveTaxCalculator.InMemory.Database.Repository.Interface;
 using ProgressiveTaxCalculator.Model.Entities;
+using ProgressiveTaxCalculator.Model.Objects;
 using ProgressiveTaxCalculator.Sandbox;
 using System;
 using System.Collections.Generic;
@@ -232,13 +233,23 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Implementation
             }
         }
 
-        public async Task<List<PostalCode>> GetPostalCodesAsync() 
+        public async Task<List<PostalCodeResponse>> GetPostalCodesAsync() 
         {
             try 
             {
                 _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(GetPostalCodesAsync)} attempting to get postal codes."));
 
-                return await _memoryContext.PostalCodes.ToListAsync();
+                return await (from pc in _memoryContext.PostalCodes
+                              join tt in _memoryContext.TaxTypes on pc.TaxTypeId equals tt.Id
+                              select new PostalCodeResponse 
+                              {
+                                  id = pc.Id,
+                                  code = pc.Code,
+                                  taxTypeId = pc.TaxTypeId,
+                                  taxTypeName = tt.TaxTypeName,
+                                  name = pc.Code + " - " + tt.TaxTypeName
+
+                              }).ToListAsync();
             }
             catch (Exception ex)
             {
