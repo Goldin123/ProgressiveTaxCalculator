@@ -233,6 +233,11 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Implementation
             }
         }
 
+        /// <summary>
+        /// This returns a list of available postal codes.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<PostalCodeResponse>> GetPostalCodesAsync() 
         {
             try 
@@ -241,6 +246,7 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Implementation
 
                 return await (from pc in _memoryContext.PostalCodes
                               join tt in _memoryContext.TaxTypes on pc.TaxTypeId equals tt.Id
+                              where pc.Active == true && tt.Active == true
                               select new PostalCodeResponse 
                               {
                                   id = pc.Id,
@@ -253,10 +259,101 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Implementation
             }
             catch (Exception ex)
             {
-                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(AddTaxTablesAsync)} - {ex.Message}"));
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(GetPostalCodesAsync)} - {ex.Message}"));
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// This returns postal code details by postal code ID.
+        /// </summary>
+        /// <param name="postalCodeId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<PostalCode> GetPostalCodeByIdAsync(int postalCodeId)
+        {
+            var postalCode = new PostalCode();
+            try
+            {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(GetPostalCodeByIdAsync)} attempting to get postal code details for postal code ID {postalCodeId}."));
+
+                postalCode = await (from p in _memoryContext.PostalCodes where p.Id.Equals(postalCodeId) && p.Active.Equals(true) select p).FirstOrDefaultAsync();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(GetPostalCodeByIdAsync)} - {ex.Message}"));
+         
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (postalCode == null)
+                    postalCode = new PostalCode();
+            }
+            return postalCode;
+        }
+
+        /// <summary>
+        /// This returns a collection of available tax tables
+        /// </summary>
+        /// <param name="postalCodeId"></param>
+        /// <param name="taxTerm"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<List<TaxTable>> GetAvailableTaxTablesAsync(int postalCodeId, int? taxTerm = 1)
+        {
+            try
+            {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(GetAvailableTaxTablesAsync)} attempting to get tax tables for postal code ID {postalCodeId} and term ID {taxTerm}."));
+
+                return await (from postal in _memoryContext.PostalCodes
+                              from taxtype in _memoryContext.TaxTypes
+                              from taxtable in _memoryContext.TaxTables
+                              where postal.TaxTypeId.Equals(taxtype.Id)
+                                 && postal.Id.Equals(taxtable.PostalCodeId)
+                                 && taxtable.TaxTermId.Equals(taxTerm)
+                                 && postal.Id.Equals(postalCodeId)
+                              select taxtable).ToListAsync();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(GetAvailableTaxTablesAsync)} - {ex.Message}"));
+                
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// This returns tax type details by tax type ID.
+        /// </summary>
+        /// <param name="taxTypeId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<TaxType> GetTaxTypeByIdAsync(int taxTypeId) 
+        {
+            var taxTypeDetails = new TaxType();
+            try
+            {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(GetTaxTypeByIdAsync)} attempting to get tax type details for tax type ID {taxTypeId}."));
+
+                taxTypeDetails = await (from t in _memoryContext.TaxTypes where t.Id.Equals(taxTypeId) && t.Active.Equals(true) select t).FirstOrDefaultAsync();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(GetTaxTypeByIdAsync)} - {ex.Message}"));
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (taxTypeDetails == null)
+                    taxTypeDetails = new TaxType();
+            }
+            return taxTypeDetails;
         }
 
         #region Private members

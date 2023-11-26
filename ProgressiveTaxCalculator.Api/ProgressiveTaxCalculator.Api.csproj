@@ -12,14 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\CalculateTax\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ProgressiveTaxCalculator.Calculator\ProgressiveTaxCalculator.Calculator.csproj" />
     <ProjectReference Include="..\ProgressiveTaxCalculator.InMemory.Database\ProgressiveTaxCalculator.InMemory.Database.csproj" />
     <ProjectReference Include="..\ProgressiveTaxCalculator.Model\ProgressiveTaxCalculator.Model.csproj" />
     <ProjectReference Include="..\ProgressiveTaxCalculator.Sandbox\ProgressiveTaxCalculator.Sandbox.csproj" />
+    <ProjectReference Include="..\ProgressiveTaxCalculator\ProgressiveTaxCalculator.csproj" />
   </ItemGroup>
 
 </Project>

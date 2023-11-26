@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProgressiveTaxCalculator.Api.Features.CalculateTax.Interface;
 using ProgressiveTaxCalculator.Api.Features.GetPostalCodes.Interface;
+using ProgressiveTaxCalculator.Calculator.Features.ProgressiveTax.Interface;
 using ProgressiveTaxCalculator.Model.Entities;
 using ProgressiveTaxCalculator.Model.Objects;
 
@@ -12,10 +14,12 @@ namespace ProgressiveTaxCalculator.Api.Controllers
     {
         private readonly ILogger<TaxController> _logger;
         private readonly IApiGetPostalCodes _apiGetPostalCodes;
-        public TaxController(ILogger<TaxController> logger, IApiGetPostalCodes apiGetPostalCodes) 
+        private readonly IApiCalculateSalaryTax _apiCalculateSalary;
+        public TaxController(ILogger<TaxController> logger, IApiGetPostalCodes apiGetPostalCodes, IApiCalculateSalaryTax apiCalculateSalary) 
         {
             _logger = logger;
             _apiGetPostalCodes = apiGetPostalCodes;
+            _apiCalculateSalary = apiCalculateSalary;
         }
 
         [HttpGet]
@@ -53,7 +57,8 @@ namespace ProgressiveTaxCalculator.Api.Controllers
         {
             try
             {
-                return Ok();
+                
+                return Ok(await _apiCalculateSalary.CalculateSalaryTaxAsync(taxSalaryRequest));
             }
             catch (Exception ex)
             {

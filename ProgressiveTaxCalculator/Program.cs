@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IPostalCodeManager, PostalCodeManager>();
 builder.Services.AddScoped<IClientOrchestratorAgent, ClientOrchestratorAgent>();
 builder.Services.AddScoped<IApplicationGenerics, ApplicationGenerics>();
+builder.Services.AddScoped<ITaxCalculatorManager, TaxCalculatorManager>();
 
 builder.Services.AddControllersWithViews();
 

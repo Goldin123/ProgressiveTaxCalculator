@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\FlatRateTax\Implementation\" />
-    <Folder Include="Features\FlatRateTax\Interface\" />
-    <Folder Include="Features\FlatValueTax\Implementation\" />
-    <Folder Include="Features\FlatValueTax\Interface\" />
-    <Folder Include="Features\ProgressiveTax\Implementation\" />
-    <Folder Include="Features\ProgressiveTax\Interface\" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProgressiveTaxCalculator.InMemory.Database\ProgressiveTaxCalculator.InMemory.Database.csproj" />
+    <ProjectReference Include="..\ProgressiveTaxCalculator.Model\ProgressiveTaxCalculator.Model.csproj" />
   </ItemGroup>
 
 </Project>
