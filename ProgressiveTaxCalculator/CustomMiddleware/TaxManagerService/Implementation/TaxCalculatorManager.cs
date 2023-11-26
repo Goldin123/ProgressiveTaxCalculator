@@ -40,7 +40,13 @@ namespace ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Implementa
                 if (taxCalculator != null)
                 {
                     if (taxCalculator.Status == System.Net.HttpStatusCode.OK)
-                        taxCalculator = _applicationGenerics.Deserialize<CalculatedTaxApiResponse>(_applicationGenerics.Serialize(taxCalculator?.ResponsePayload));
+                    {
+                        CalculatedTaxApiResponse calculatedTaxApiResponse = _applicationGenerics.Deserialize<CalculatedTaxApiResponse>(_applicationGenerics.Serialize(taxCalculator?.ResponsePayload));
+                        if(calculatedTaxApiResponse != null) 
+                        {
+                            message = new Tuple<string, bool>(string.Format(Notifications.CalculatedTax, calculatedTaxApiResponse.postalCode, calculatedTaxApiResponse.grossAmount, calculatedTaxApiResponse.taxType, calculatedTaxApiResponse.taxPercentage, calculatedTaxApiResponse.taxAmount, calculatedTaxApiResponse.nettAmount), true);                  
+                        }
+                    }
                 }
             }
             catch (Exception ex)

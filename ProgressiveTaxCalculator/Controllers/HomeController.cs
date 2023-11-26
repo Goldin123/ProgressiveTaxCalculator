@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Interface;
+using ProgressiveTaxCalculator.Model.Constants;
 using ProgressiveTaxCalculator.Models;
 using System.Diagnostics;
 using System.Reflection;
@@ -52,7 +53,7 @@ namespace ProgressiveTaxCalculator.Controllers
                     if (calculation != null) 
                     {
                         if (calculation.Item2)
-                            ViewBag.ResultMessage = calculation.Item1;
+                            ViewBag.ResultMessage =  calculation.Item1;
 
                     }
 
