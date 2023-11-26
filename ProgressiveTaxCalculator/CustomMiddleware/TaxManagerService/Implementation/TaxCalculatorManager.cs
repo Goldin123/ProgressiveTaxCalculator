@@ -44,7 +44,9 @@ namespace ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Implementa
                         CalculatedTaxApiResponse calculatedTaxApiResponse = _applicationGenerics.Deserialize<CalculatedTaxApiResponse>(_applicationGenerics.Serialize(taxCalculator?.ResponsePayload));
                         if(calculatedTaxApiResponse != null) 
                         {
-                            message = new Tuple<string, bool>(string.Format(Notifications.CalculatedTax, calculatedTaxApiResponse.postalCode, calculatedTaxApiResponse.grossAmount, calculatedTaxApiResponse.taxType, calculatedTaxApiResponse.taxPercentage, calculatedTaxApiResponse.taxAmount, calculatedTaxApiResponse.nettAmount), true);                  
+                            var msg = string.Format(Notifications.CalculatedTax, calculatedTaxApiResponse.postalCode, calculatedTaxApiResponse.grossAmount, calculatedTaxApiResponse.taxType, calculatedTaxApiResponse.taxPercentage, calculatedTaxApiResponse.taxAmount, calculatedTaxApiResponse.nettAmount);
+                            _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, msg));
+                            message = new Tuple<string, bool>(msg, true);                  
                         }
                     }
                 }
