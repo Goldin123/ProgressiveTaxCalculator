@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Interface;
+using ProgressiveTaxCalculator.Model.Constants;
 using ProgressiveTaxCalculator.Models;
 using System.Diagnostics;
 using System.Reflection;
@@ -10,11 +11,13 @@ namespace ProgressiveTaxCalculator.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IPostalCodeManager _postalCodeManager;
+        private readonly ITaxCalculatorManager _taxCalculatorManager;
 
-        public HomeController(ILogger<HomeController> logger, IPostalCodeManager postalCodeManager)
+        public HomeController(ILogger<HomeController> logger, IPostalCodeManager postalCodeManager, ITaxCalculatorManager taxCalculatorManager)
         {
             _logger = logger;
             _postalCodeManager = postalCodeManager;
+            _taxCalculatorManager = taxCalculatorManager;
         }
 
         public async Task<IActionResult> Index()
@@ -38,11 +41,22 @@ namespace ProgressiveTaxCalculator.Controllers
         {
             try
             {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(Index)} post home page values."));
+
                 if (progressiveTaxViewModel.PostalCodes == null)
                     progressiveTaxViewModel.PostalCodes = await _postalCodeManager.GetPostalCodesAsync();
 
                 if (ModelState.IsValid)
                 {
+                    var calculation = await _taxCalculatorManager.CalculateTaxAsync(progressiveTaxViewModel);
+
+                    if (calculation != null) 
+                    {
+                        if (calculation.Item2)
+                            ViewBag.ResultMessage =  calculation.Item1;
+
+                    }
+
                     return View(progressiveTaxViewModel);
                 }
             }

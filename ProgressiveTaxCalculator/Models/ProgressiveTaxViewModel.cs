@@ -11,6 +11,8 @@ namespace ProgressiveTaxCalculator.Models
 
         [Required(ErrorMessage ="Please enter an amount.")]
         [RegularExpression(@"^\$?\d+(\.(\d{2}))?$")]
+        [Range(0, double.MaxValue, ErrorMessage = "Amount must be a non-negative number.")]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public decimal GrossAmount { get; set; }
     }
 }

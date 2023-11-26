@@ -9,6 +9,7 @@ namespace ProgressiveTaxCalculator.Model.Constants
     public static class Endpoints
     {
         public const string GetPostalCodes = "Tax/GetPostalCode";
+        public const string CalculateIncomeTax = "Tax/CalculateIncomeTax";
 
     }
 }

@@ -40,6 +40,8 @@ namespace ProgressiveTaxCalculator.Sandbox.ApiTools.Client.Implementation
             var responseData = new ResponseData();
             try
             {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(SendRequestAsync)} about to send request."));
+
                 var restRequest = new RestRequest(path, methodType);
 
                 restRequest.AddHeader("Accept", ContentNegotiationTypes.Json);

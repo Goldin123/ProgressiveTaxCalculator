@@ -42,21 +42,21 @@ namespace ProgressiveTaxCalculator.Sandbox.DatabaseTools.GenerateDataValues
         {
             return new List<TaxTable>()
             {
-                new TaxTable { Active = true, Id = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 8350m, TaxPercentage = 0.10m },
-                new TaxTable { Active = true, Id = 2, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 33950m, TaxPercentage = 0.15m },
-                new TaxTable { Active = true, Id = 3, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 82250m, TaxPercentage = 0.25m },
-                new TaxTable { Active = true, Id = 4, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 171550m, TaxPercentage = 0.28m },
-                new TaxTable { Active = true, Id = 5, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 372950m, TaxPercentage = 0.33m },
-                new TaxTable { Active = true, Id = 6, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = decimal.MaxValue, TaxPercentage = 0.35m },
-                new TaxTable { Active = true, Id = 7, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 8350m, TaxPercentage = 0.10m },
-                new TaxTable { Active = true, Id = 8, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 33950m, TaxPercentage = 0.15m },
-                new TaxTable { Active = true, Id = 9, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 82250m, TaxPercentage = 0.25m },
-                new TaxTable { Active = true, Id = 10, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 171550m, TaxPercentage = 0.28m },
-                new TaxTable { Active = true, Id = 11, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 372950m, TaxPercentage = 0.33m },
-                new TaxTable { Active = true, Id = 12, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = decimal.MaxValue, TaxPercentage = 0.35m },
-                new TaxTable { Active = true, Id = 13, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 2, PostalCodeId = 2, Amount = 199999.99m, TaxPercentage = 0.05m }, //Flat Value
-                new TaxTable { Active = true, Id = 14, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 2, PostalCodeId = 2, Amount = decimal.MaxValue, TaxPercentage = null }, //Flat Value
-                new TaxTable { Active = true, Id = 15, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 3, PostalCodeId = 3, Amount = decimal.MaxValue, TaxPercentage = 0.175m }, //Flat Rate
+                new TaxTable { Id = 1,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 8350m, TaxPercentage = 0.10m, UsePercentage = true },
+                new TaxTable { Id = 2,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 33950m, TaxPercentage = 0.15m, UsePercentage = true },
+                new TaxTable { Id = 3,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 82250m, TaxPercentage = 0.25m, UsePercentage = true },
+                new TaxTable { Id = 4,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 171550m, TaxPercentage = 0.28m, UsePercentage = true },
+                new TaxTable { Id = 5,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = 372950m, TaxPercentage = 0.33m, UsePercentage = true },
+                new TaxTable { Id = 6,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 1, Amount = decimal.MaxValue, TaxPercentage = 0.35m, UsePercentage = true },
+                new TaxTable { Id = 7,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 8350m, TaxPercentage = 0.10m, UsePercentage = true },
+                new TaxTable { Id = 8,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 33950m, TaxPercentage = 0.15m, UsePercentage = true },
+                new TaxTable { Id = 9,  Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 82250m, TaxPercentage = 0.25m, UsePercentage = true },
+                new TaxTable { Id = 10, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 171550m, TaxPercentage = 0.28m, UsePercentage = true },
+                new TaxTable { Id = 11, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = 372950m, TaxPercentage = 0.33m, UsePercentage = true },
+                new TaxTable { Id = 12, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 1, PostalCodeId = 4, Amount = decimal.MaxValue, TaxPercentage = 0.35m, UsePercentage = true },
+                new TaxTable { Id = 13, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 2, PostalCodeId = 2, Amount = 199999.99m, TaxPercentage = 0.05m, UsePercentage = true }, //Flat Value
+                new TaxTable { Id = 14, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 2, PostalCodeId = 2, Amount = decimal.MaxValue, TaxPercentage = 10000m, UsePercentage = false}, //Flat Value
+                new TaxTable { Id = 15, Active = true, TaxTermId = 1, DateAdded = DateTime.Now, DateUpdate = DateTime.Now , TaxTypeId = 3, PostalCodeId = 3, Amount = decimal.MaxValue, TaxPercentage = 0.175m , UsePercentage = true }, //Flat Rate
             };
         }
     }

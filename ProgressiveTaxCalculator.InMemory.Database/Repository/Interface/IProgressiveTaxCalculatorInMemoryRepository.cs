@@ -16,5 +16,8 @@ namespace ProgressiveTaxCalculator.InMemory.Database.Repository.Interface
         Task<List<PostalCode>> AddPostalCodeAsync(List<PostalCode> postalCodes);
         Task<List<TaxTable>> AddTaxTablesAsync(List<TaxTable> taxTables);
         Task<List<PostalCodeResponse>> GetPostalCodesAsync();
+        Task<List<TaxTable>> GetAvailableTaxTablesAsync(int postalCodeId, int? taxTerm = 1);
+        Task<PostalCode> GetPostalCodeByIdAsync(int postalCodeId);
+        Task<TaxType> GetTaxTypeByIdAsync(int taxTypeId);
     }
 }

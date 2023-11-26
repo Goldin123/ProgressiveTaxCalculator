@@ -2,14 +2,14 @@
 @model ProgressiveTaxViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Tax Calculator";
 }
 
 <div>
     <form asp-action="Index" asp-controller="Home" method="post">
-        <h1 class="display-4">Welcome </h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
+        <h1 class="display-4">Welcome To The Salary Calculator</h1>
+        <p>Please select the below postal code and enter your gross amount.</p>
+        <p>Please also note the calculation are based on an annual interval.</p>
         <div class="form-group">
             <label asp-for="PostalCodeId">Select Postal Code:</label>
             <select asp-for="PostalCodeId" asp-items="new SelectList(Model.PostalCodes, nameof(PostalCodeResponse.id), nameof(PostalCodeResponse.name))" class="form-control">
@@ -27,3 +27,10 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<br />
+@if (!string.IsNullOrEmpty(ViewBag.ResultMessage))
+{
+    <div class="alert alert-success">
+        @ViewBag.ResultMessage
+    </div>
+}

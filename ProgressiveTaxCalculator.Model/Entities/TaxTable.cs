@@ -16,8 +16,10 @@ namespace ProgressiveTaxCalculator.Model.Entities
         public int? Id { get; set; }
         public int? TaxTypeId { get; set; }
         public int? PostalCodeId { get; set; }
+        public int? TaxTermId { get; set; }
         public decimal? Amount { get; set; }
         public decimal? TaxPercentage { get; set; }
+        public bool? UsePercentage { get; set; }
         public bool? Active { get; set; }
         public DateTime? DateAdded { get; set; }
         public DateTime? DateUpdate { get; set; }

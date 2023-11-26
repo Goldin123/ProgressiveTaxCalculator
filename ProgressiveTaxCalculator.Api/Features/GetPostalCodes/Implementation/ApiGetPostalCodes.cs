@@ -20,7 +20,9 @@ namespace ProgressiveTaxCalculator.Api.Features.GetPostalCodes.Implementation
         public async Task<List<PostalCodeResponse>> GetPostalCodes() 
         {
             try 
-            { 
+            {
+                _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(GetPostalCodes)} sending request to get postal codes."));
+
                 return await _inMemoryTaxRepository.GetPostalCodesAsync();
             }
             catch (Exception ex) 
