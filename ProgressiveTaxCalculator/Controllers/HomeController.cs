@@ -54,6 +54,11 @@ namespace ProgressiveTaxCalculator.Controllers
                     {
                         if (calculation.Item2)
                             ViewBag.ResultMessage =  calculation.Item1;
+                        else 
+                        {
+                            var err = new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier , Message = calculation.Item1};
+                            return RedirectToAction("Error",err);
+                        }
 
                     }
 
@@ -73,9 +78,9 @@ namespace ProgressiveTaxCalculator.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(ErrorViewModel errorViewModel )
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(errorViewModel);
         }
     }
 }
