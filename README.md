@@ -53,6 +53,8 @@ This a ASP.NET 7 application that calculates annual tax given a postal code and 
 
   * Make sure the correct SDK is installed.
   * Make sure the Website and Api are both set as start-up projects
+    ![image](https://github.com/Goldin123/ProgressiveTaxCalculator/assets/17449653/83aebddf-5276-4097-bb36-06591e5b9aac)
+
   * The seeding of the database happaens automatically. 
 
  ### Installation
