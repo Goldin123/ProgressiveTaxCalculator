@@ -51,11 +51,19 @@ namespace ProgressiveTaxCalculator.CustomMiddleware.TaxManagerService.Implementa
                             message = new Tuple<string, bool>(msg, true);                  
                         }
                     }
+                    else 
+                    {
+                        message = new Tuple<string, bool>(_applicationGenerics.Deserialize<string>(_applicationGenerics.Serialize(taxCalculator?.ResponsePayload)), false);
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogCritical(string.Format("{0} - {1}", DateTime.Now, $"{nameof(CalculateTaxAsync)} - {ex.Message}"));
+                
+                message = new Tuple<string, bool>(ex.Message, false);
+
             }
             return message;
         }
