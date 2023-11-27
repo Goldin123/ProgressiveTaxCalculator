@@ -44,36 +44,35 @@ namespace ProgressiveTaxCalculator.Calculator.Features.FlatValueTax.Implementati
                     foreach (var taxTable in calculateTaxRequest.TaxTables)
                     {
 
-                        if(calculatedTax.GrossAmount <= calculatedTax.TaxAmount) 
+                        if (calculateTaxRequest.GrossAmount <= taxTable.Amount)
                         {
                             calculatedTax.TaxPercentage = taxTable.TaxPercentage;
                             calculatedTax.TaxAmount = calculateTaxRequest.GrossAmount * calculatedTax.TaxPercentage;
                             _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(CalculateTaxAsync)} tax percentage to use: {taxTable.TaxPercentage:n}."));
-                        }
-                        else 
+                            break;
+
+                        } else if (calculateTaxRequest.GrossAmount >= 200000m) 
                         {
-                            calculatedTax.TaxPercentage = taxTable.TaxPercentage;
-
-                            calculatedTax.TaxAmount = calculatedTax.TaxPercentage;
+                            calculatedTax.TaxAmount = 10000m;
+                            break;
                         }
 
-                        _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(CalculateTaxAsync)} tax amount is : {calculatedTax.TaxAmount:n}."));
-
-                        calculatedTax.NettAmount = calculateTaxRequest.GrossAmount - calculatedTax.TaxAmount;
-
-                        _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(CalculateTaxAsync)} total nett amount is : {calculatedTax.NettAmount:n}."));
-
-                        calculatedTax.GrossAmount = calculateTaxRequest.GrossAmount;
-                        var postalCodeDetails = await _inMemoryTaxRepository.GetPostalCodeByIdAsync(calculateTaxRequest.PostalCodeId ?? 0);
-                        var taxTypeDetails = await _inMemoryTaxRepository.GetTaxTypeByIdAsync(taxType);
-                        if (postalCodeDetails != null)
-                            calculatedTax.PostalCode = postalCodeDetails.Code;
-
-                        if (taxTypeDetails != null)
-                            calculatedTax.TaxType = taxTypeDetails.TaxTypeName;
-
-                        break;
                     }
+
+                    _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(CalculateTaxAsync)} tax amount is : {calculatedTax.TaxAmount:n}."));
+
+                    calculatedTax.NettAmount = calculateTaxRequest.GrossAmount - calculatedTax.TaxAmount;
+
+                    _logger.LogInformation(string.Format("{0} - {1}", DateTime.Now, $"System {nameof(CalculateTaxAsync)} total nett amount is : {calculatedTax.NettAmount:n}."));
+
+                    calculatedTax.GrossAmount = calculateTaxRequest.GrossAmount;
+                    var postalCodeDetails = await _inMemoryTaxRepository.GetPostalCodeByIdAsync(calculateTaxRequest.PostalCodeId ?? 0);
+                    var taxTypeDetails = await _inMemoryTaxRepository.GetTaxTypeByIdAsync(taxType);
+                    if (postalCodeDetails != null)
+                        calculatedTax.PostalCode = postalCodeDetails.Code;
+
+                    if (taxTypeDetails != null)
+                        calculatedTax.TaxType = taxTypeDetails.TaxTypeName;
                 }
             }
             catch (Exception ex)
