@@ -93,14 +93,26 @@ The system uses in total 4 core tables but can be expanded to cater for more pro
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  ## Api
+![image](https://github.com/Goldin123/ProgressiveTaxCalculator/assets/17449653/97c84e1a-714d-4f48-8848-d053e99cb3c9)
 
+The API currently has 2 endpoints
+* GetPostalCode - This returns a collection of postal code used to populate the dropdown inputbox.
+* CalculateIncomeTax - This is used to do the actual tax calculations.
+   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  ## Website
+
+ ![image](https://github.com/Goldin123/ProgressiveTaxCalculator/assets/17449653/13c1991e-1a3d-4f39-91aa-c4dac40d75ce)
+
+ The application website has the above user interface. Input are valideted on the page first before they can be submitted for processing.
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  ## FAQ
 
+* Where are the unit tests? A: The project currenly lacks unit tests, but the idea is to use NUint, of which the structure is there.
+* What about security? A: The idea was to use JWT tokens for api auth.
+  
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
