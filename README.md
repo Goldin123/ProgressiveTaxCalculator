@@ -41,7 +41,9 @@ This a ASP.NET 7 application that calculates annual tax given a postal code and 
 
  ## Getting Started
 
- This application uses ASP.Net 7, make sure the correct SDK is installed.
+ * This application uses ASP.Net 7, make sure the correct SDK is installed.
+ * Be sure to have the latest visual studio installed.
+ * Check the output window for any logs that application does.
 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
